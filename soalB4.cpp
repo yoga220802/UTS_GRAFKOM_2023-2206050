@@ -172,12 +172,14 @@ void sidesDrawer(int endPoint, GLfloat front_points[][3], GLfloat rear_points[][
     objectSides(front_points[endPoint], front_points[1], rear_points[1], rear_points[endPoint]);
 }
 
-void ITG(void)
+void ITG(double zFront, double zRear, GLfloat rotationAngle, float rotateToX, float rotateToY, float rotateToZ)
 {
     dots front;
     dots rear;
-    front.setZ(0.5);
-    rear.setZ(-0.5);
+    front.setZ(zFront + 0.01);
+    rear.setZ(zRear - 0.01);
+
+    glRotatef(rotationAngle, rotateToX, rotateToY, rotateToZ);
 
     // HURUF I
     glBegin(GL_QUADS);
@@ -212,10 +214,9 @@ void ITG(void)
 
 void display()
 {
-    glRotatef(0.4, 0, 1, 0);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glClearColor(0.003, 0.345, 0.313, 1.0);
-    ITG();
+    ITG(0.5, -0.5, 0.5, 0.0, -1.0, 0.0);
     glutSwapBuffers();
     glutPostRedisplay();
 }
