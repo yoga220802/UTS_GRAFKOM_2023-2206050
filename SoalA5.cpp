@@ -1,6 +1,5 @@
 #include <GL/glut.h>
-// Output hasil clipping Garis Dengan Algoritma Cohen-Sutherland
-
+// Contoh Class dan penggunannya
 class Colors {
 public:
     float red[3] = {1.0, 0.0, 0.0};
@@ -44,7 +43,7 @@ int main(int argc, char **argv) {
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
     glutInitWindowSize(400, 400);
     glutInitWindowPosition(100, 100);
-    glutCreateWindow("SOAL B.2 - UTS GRAFKOM 2023 - 2206050");
+    glutCreateWindow("SOAL A.5 - UTS GRAFKOM 2023 - 2206050");
     init();
     glutDisplayFunc(display);
     glutMainLoop();
